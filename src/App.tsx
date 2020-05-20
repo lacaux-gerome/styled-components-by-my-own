@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { styled } from "./styled-component";
 
-function App() {
+type TestProps = {
+  isRed: boolean;
+  isBig: boolean;
+};
+
+const Test = styled.div<TestProps>`
+  width: ${({ isBig }) => (isBig ? "200px" : "100px")};
+  height: 100px;
+  background-color: ${({ isRed }) => (isRed ? "red" : "blue")};
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Test isBig={true} isRed={true}>
+      Je suis un contenu test
+    </Test>
   );
-}
+};
 
 export default App;
