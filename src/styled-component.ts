@@ -120,7 +120,6 @@ enum DomElements {
 }
 
 class StyledComponents {
-  declare keys: DomElements;
   constructor() {
     Object.values(DomElements).forEach((key) => {
       // @ts-ignore
